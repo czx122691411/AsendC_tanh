@@ -1,4 +1,6 @@
 
+#include <cstring>
+
 #include "../op_kernel/tanh_custom_tiling.h"
 #include "register/op_def_registry.h"
 
@@ -9,11 +11,10 @@ const uint32_t TILE_NUM = 8;
 static ge::graphStatus TilingFunc(gert::TilingContext* context)
 {
 
-    // TODO: 考生自行补齐Tiling函数
     //局部静态的目的是什么？
-    unit32_t totalLength = static_cast<uint32_t>(
+    uint32_t totalLength = static_cast<uint32_t>(
         context->GetInputShape(0)->GetStorageShape().GetShapeSize());
-    
+
     //tile对象声明
     TanhCustomTilingData tiling;
     tiling.totalLength = totalLength;
@@ -23,6 +24,8 @@ static ge::graphStatus TilingFunc(gert::TilingContext* context)
     auto rawTilingData = context->GetRawTilingData();
     std::memcpy(rawTilingData->GetData(), &tiling, sizeof(tiling));
     rawTilingData->SetDataSize(sizeof(tiling));
+
+    context->SetBlockDim(BLOCK_DIM);
     return ge::GRAPH_SUCCESS;
 }
 }
