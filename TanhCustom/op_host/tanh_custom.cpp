@@ -10,6 +10,19 @@ static ge::graphStatus TilingFunc(gert::TilingContext* context)
 {
 
     // TODO: 考生自行补齐Tiling函数
+    //局部静态的目的是什么？
+    unit32_t totalLength = static_cast<uint32_t>(
+        context->GetInputShape(0)->GetStorageShape().GetShapeSize());
+    
+    //tile对象声明
+    TanhCustomTilingData tiling;
+    tiling.totalLength = totalLength;
+    tiling.tileNum = TILE_NUM;
+    //获取原始的tiling数据对象
+    //为什么要跟rawTilingData进行拷贝？
+    auto rawTilingData = context->GetRawTilingData();
+    std::memcpy(rawTilingData->GetData(), &tiling, sizeof(tiling));
+    rawTilingData->SetDataSize(sizeof(tiling));
     return ge::GRAPH_SUCCESS;
 }
 }

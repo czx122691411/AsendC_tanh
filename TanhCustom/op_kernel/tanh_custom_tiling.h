@@ -20,5 +20,7 @@
 
 struct TanhCustomTilingData {
     // TODO: 考生自行补齐Tiling参数定义，直接定义即可，无需套用宏
+    uint32_t totalLength;//tile的长度
+    uint32_t tileNum;//tile的数量
 };
 #endif 
