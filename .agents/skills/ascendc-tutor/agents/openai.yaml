@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ascend C 算子开发导师"
+  short_description: "通过小步实验理解算子数据流，学习数值精度、调试复盘与性能优化"
+  default_prompt: "使用 $ascendc-tutor，结合当前进度指导我学习 TanhCustom，每次只完成一个可验证步骤，默认由我执行。"

@@ -12,6 +12,9 @@ __pycache__/
 *.bin
 input/
 output/
+cceprint/
+npuchk/
+stub_reg.log
 .env
 .env.*
 !.env.example
@@ -19,3 +22,7 @@ auth.json
 *.pem
 *.key
 .vscode/
+
+# 纯逻辑测试的可执行文件
+experiments/identity_copy/split_test
+experiments/identity_copy/dtype_contract
