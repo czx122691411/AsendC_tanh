@@ -1,4 +1,5 @@
 #include "kernel_operator.h"
+#include "math/tanh.h" // 高阶 Tanh API（asc/include/adv_api/math/tanh.h）
 #include "tanh_custom_tiling.h"
 
 constexpr int32_t BUFFER_NUM = 2; // tensor num for each queue
@@ -98,9 +99,9 @@ private:
     {
         AscendC::LocalTensor<DTYPE_X> xLocal = inQueueX.DeQue<DTYPE_X>();
         AscendC::LocalTensor<DTYPE_Y> yLocal = outQueueY.AllocTensor<DTYPE_Y>();
-        // 身份拷贝：本实验按原题 FP16 输入输出运行，尚未调用 Tanh API。
-        // 只计算 count 个有效元素，不把 UB 补齐区域当成有效输入。
-        AscendC::Muls(yLocal, xLocal, (DTYPE_Y)1.0f, count);
+        // 高阶 Tanh：带 calCount 的重载，只计算 count 个有效元素，
+        // 不把 UB 补齐区域当成有效输入（尾块行为由 tanh_numeric 实验回归）。
+        AscendC::Tanh(yLocal, xLocal, count);
         outQueueY.EnQue<DTYPE_Y>(yLocal);
         inQueueX.FreeTensor(xLocal);
     }

@@ -1,6 +1,6 @@
 # 知识卡 06：高阶 Tanh API 存在（并修正一次误判）
 
-**日期**：2026-10-18　**状态**：源码已确认；未编译验证
+**日期**：2026-10-18　**更新**：2026-10-21　**状态**：CPU 域已编译并数值验证；真机未验证
 
 ## 结论
 
@@ -98,9 +98,12 @@ maxTmpBuffer = maxLiveNodeCount × inputSize × typeSize + extraBuf
 
 ## 待验证项
 
-- [ ] `Tanh` 在 CPU 域调试（`ASCENDC_CPU_DEBUG`）下是否可用，还是只能真机跑
-- [ ] `calCount` 非 16 倍数时的行为（是否内部处理尾块）
-- [ ] fp16、输入 `[-3, 3)` 下与 numpy golden 的误差是否满足 1e-3
+- [x] `Tanh` 在 CPU 域调试（`ASCENDC_CPU_DEBUG`）下是否可用，还是只能真机跑
+  → 可用（2026-10-21，`experiments/tanh_numeric/`，g++ 直接编译通过，无需真机）
+- [x] `calCount` 非 16 倍数时的行为（是否内部处理尾块）
+  → 尾块安全：31（尾 15）、100（尾 4）、1（尾 1）等 7 形状全 PASS，未污染 guard
+- [x] fp16、输入 `[-3, 3)` 下与 numpy golden 的误差是否满足 1e-3
+  → 满足：CPU 域最大绝对误差 2.43e-4（出现在 |x|≈2.5 处），全形状 bad=0
 - [ ] 两种重载（带/不带 tmp buffer）的实际性能差异（需真机 profiler）
 
 ## 下一步

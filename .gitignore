@@ -26,3 +26,6 @@ auth.json
 # 纯逻辑测试的可执行文件
 experiments/identity_copy/split_test
 experiments/identity_copy/dtype_contract
+
+# 生成的图表输出
+plots*/

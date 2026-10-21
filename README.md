@@ -5,11 +5,11 @@
 ## 当前状态
 
 - 已同步本地题目模板、配套 aclnn 测试和技术资料。
-- kernel 的数据通路已用身份拷贝（`Muls(x, 1.0)` 占位）验证通过；
-  **尚未实现或验证完整 Tanh 算子**。
-- 第一版计划采用高阶 Tanh API；设备及 CANN 9.0.0 接口支持需要实际验证。
+- 高阶 `AscendC::Tanh` 已落地 kernel（带 `calCount` 的无临时缓冲重载），
+  ascend910b 目标编译通过；CPU 域数值回归 7 形状全 PASS，最大误差 2.43e-4 < 1e-3
+  （`experiments/tanh_numeric/`，见知识卡 08）。
+- **真机未验证**：算子包未安装、`AclNNInvocation` 未跑、NPU 精度与性能未知。
 - 模板当前编译目标为 `ascend910b`（A2），这不等同于已确认考核后台设备。
-- 未在本次同步中运行编译、CPU 孪生调试或 NPU 精度测试。
 
 ## 目录
 
