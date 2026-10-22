@@ -47,7 +47,7 @@ public:
         if (this->coreLength == 0) {
             return;
         }
-        // coreOffset 只在这里加一次。后续 xGm[offset] 的 offset 是核内偏移。
+        // coreOffset 只在这里加一次。后续 xGm[     ] 的 offset 是核内偏移。
         xGm.SetGlobalBuffer((__gm__ DTYPE_X*)x + this->coreOffset,
                             this->coreLength);
         yGm.SetGlobalBuffer((__gm__ DTYPE_Y*)y + this->coreOffset,

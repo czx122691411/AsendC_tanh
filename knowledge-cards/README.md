@@ -18,6 +18,7 @@
 | [06](06-api-availability.md) | 高阶 Tanh API **存在**（含一次误判修正） | 源码确认，未编译验证 |
 | [07](07-split-formula-teaching.md) | 尾块划分公式：教学复盘与错误模式 | 积木 1 已验证；kernel 落地后经卡 08 数值回归 PASS |
 | [08](08-tanh-numeric-loop.md) | 高阶 Tanh 数值闭环（CPU 域） | CPU 域已验证；真机未验证 |
+| [09](09-no-npu-profiling-survey.md) | 无卡性能仿真工具勘察 | 已验证：910B 无仿真 CLI 入口，性能等真机 |
 
 ## 当前进度
 
