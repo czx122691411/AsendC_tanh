@@ -19,6 +19,7 @@
 | [07](07-split-formula-teaching.md) | 尾块划分公式：教学复盘与错误模式 | 积木 1 已验证；kernel 落地后经卡 08 数值回归 PASS |
 | [08](08-tanh-numeric-loop.md) | 高阶 Tanh 数值闭环（CPU 域） | CPU 域已验证；真机未验证 |
 | [09](09-no-npu-profiling-survey.md) | 无卡性能仿真工具勘察 | 已验证：910B 无仿真 CLI 入口，性能等真机 |
+| [10](10-real-device-precision-loop.md) | 真机精度闭环（910B3） | aclnn 精度已验证：test pass，max_err=9.77e-4 < 1e-3 |
 
 ## 当前进度
 
@@ -31,4 +32,6 @@
 - 第 2 阶段（高阶 Tanh 数值闭环）：**CPU 域完成**。kernel 已替换为 `AscendC::Tanh`
   （带 calCount），真实工程 ascend910b 编译通过；数值回归 harness 在
   `experiments/tanh_numeric/`，7 形状全 PASS、最大误差 2.43e-4 < 1e-3（见卡 08）。
-  下一步：真机闭环——安装 run 包、跑 `AclNNInvocation` 精度与性能（需 NPU 环境）
+- 真机闭环（aclnn 精度）：**完成**。本机出现 910B3，算子包编译安装成功，
+  `AclNNInvocation` 真机执行 `test pass`，max_err=9.77e-4 < 1e-3（见卡 10）。
+  下一步：37 点覆盖表真机回归、`msprof op` 性能基线

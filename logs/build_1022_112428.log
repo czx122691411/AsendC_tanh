@@ -1,0 +1,132 @@
+using ASCEND_HOME_PATH: /home/developer/Ascend/cann-9.0.0
+Preset CMake variables:
+
+  ASCEND_CANN_PACKAGE_PATH:PATH="/home/developer/Ascend/cann-9.0.0"
+  ASCEND_COMPUTE_UNIT:STRING="ascend910b"
+  ASCEND_PACK_SHARED_LIBRARY:BOOL="False"
+  ASCEND_PYTHON_EXECUTABLE:STRING="python3"
+  CMAKE_BUILD_TYPE:STRING="Release"
+  CMAKE_CROSS_PLATFORM_COMPILER:PATH="/usr/bin/aarch64-linux-gnu-g++"
+  CMAKE_INSTALL_PREFIX:PATH="/mnt/workspace/gitCode/cann/npu-simulator/AsendC_tanh/TanhCustom/build_out"
+  ENABLE_BINARY_PACKAGE:BOOL="True"
+  ENABLE_CROSS_COMPILE:BOOL="False"
+  ENABLE_SOURCE_PACKAGE:BOOL="True"
+  ENABLE_TEST:BOOL="True"
+  vendor_name:STRING="customize"
+
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- set package config: INSTALL_PATH;/mnt/workspace/gitCode/cann/npu-simulator/AsendC_tanh/TanhCustom/build_out/
+INFO target name: cust_tf_parsers
+-- Opbuild generating sources
+-- Opbuild generating sources - done
+INFO target name: cust_optiling
+INFO target name: cust_opapi
+INFO target name: cust_op_proto
+INFO target name: ascendc_kernels
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    ASCEND_PACK_SHARED_LIBRARY
+    CMAKE_CROSS_PLATFORM_COMPILER
+    ENABLE_TEST
+
+
+-- Build files have been written to: /mnt/workspace/gitCode/cann/npu-simulator/AsendC_tanh/TanhCustom/build_out
+[ 25%] Generating ../autogen/copy_kernel_src.timestamp
+[ 50%] Building CXX object op_host/CMakeFiles/cust_optiling.dir/tanh_custom.cpp.o
+[ 50%] Built target ascendc_kernels_copy_kernel_srcs
+[ 75%] Generating ascendc_kernels/tbe/op_info_cfg/ai_core/ascend910b/aic-ascend910b-ops-info.json
+
+
+==============check valid for ops info start==============
+==============check valid for ops info end================
+
+
+Compile op info cfg successfully.
+[ 75%] Built target ascendc_kernels_ops_info_gen_ascend910b
+[ 75%] Built target cust_optiling
+[100%] Linking CXX shared library libcust_opmaster_rt2.0.so
+[100%] Built target customize_ascendc_cust_optiling
+[ascend910b] Generating TanhCustom_9d11ee3633f584c6342b586860ca562b ...
+Opc tool start working now, please wait for a moment.
+[ascend910b] Generating TanhCustom_9d11ee3633f584c6342b586860ca562b Done
+[100%] Built target TanhCustom_ascend910b
+[100%] Built target ascendc_kernels_ascendc_bin_ascend910b_gen_ops_config
+[100%] Built target binary
+Consolidate compiler generated dependencies of target cust_optiling
+[  7%] Generating scripts/install.sh, scripts/upgrade.sh, scripts/uninstall.sh
+[ 23%] Building CXX object op_host/CMakeFiles/cust_opapi.dir/__/autogen/aclnn_tanh_custom.cpp.o
+[ 23%] Building CXX object framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_tanh_custom_plugin.cc.o
+[ 30%] Generating ascendc_kernels/tbe/op_info_cfg/ai_core/npu_supported_ops.json
+[ 38%] Building CXX object op_host/CMakeFiles/cust_op_proto.dir/tanh_custom.cpp.o
+[ 53%] Built target ascendc_kernels_copy_kernel_srcs
+[ 53%] Building CXX object op_host/CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.o
+[ 61%] Built target cust_optiling
+[ 61%] Built target gen_version_info
+/mnt/workspace/gitCode/cann/npu-simulator/AsendC_tanh/TanhCustom/build_out/autogen /mnt/workspace/gitCode/cann/npu-simulator/AsendC_tanh/TanhCustom/build_out/op_kernel/ascendc_kernels/tbe/op_info_cfg/ai_core
+[ 69%] Built target ascendc_kernels_ops_info_gen_ascend910b
+[ 76%] Built target customize_ascendc_cust_optiling
+[ 76%] Built target modify_vendor
+[ 76%] Built target optiling_compat
+[INFO] Succeeded generated /mnt/workspace/gitCode/cann/npu-simulator/AsendC_tanh/TanhCustom/build_out/op_kernel/ascendc_kernels/tbe/op_info_cfg/ai_core/npu_supported_ops.json
+[ 76%] Built target customize_npu_supported_ops
+[ 76%] Built target cust_opapi
+[ 84%] Linking CXX shared library libcust_opapi.so
+[ 84%] Built target customize_ascendc_cust_opapi
+[ 92%] Linking CXX shared library libcust_tf_parsers.so
+[ 92%] Built target cust_tf_parsers
+[ 92%] Built target cust_op_proto
+[100%] Linking CXX shared library libcust_opsproto_rt2.0.so
+[100%] Built target customize_ascendc_cust_op_proto
+Run CPack packaging tool...
+CPack: Create package using External
+CPack: Install projects
+CPack: - Run preinstall target for: opp
+CPack: - Install project: opp []
+CPack: Create package
+
+About to compress 1436 KB of data...
+Adding files to archive named "custom_opp_ubuntu_aarch64.run"...
+./help.info
+./install.sh
+./packages/vendors/customize/framework/tensorflow/libcust_tf_parsers.so
+./packages/vendors/customize/framework/tensorflow/npu_supported_ops.json
+./packages/vendors/customize/op_api/include/aclnn_tanh_custom.h
+./packages/vendors/customize/op_api/lib/libcust_opapi.so
+./packages/vendors/customize/op_impl/ai_core/tbe/config/ascend910b/aic-ascend910b-ops-info.json
+./packages/vendors/customize/op_impl/ai_core/tbe/customize_impl/dynamic/tanh_custom.cpp
+./packages/vendors/customize/op_impl/ai_core/tbe/customize_impl/dynamic/tanh_custom.py
+./packages/vendors/customize/op_impl/ai_core/tbe/customize_impl/dynamic/tanh_custom_tiling.h
+./packages/vendors/customize/op_impl/ai_core/tbe/kernel/ascend910b/tanh_custom/TanhCustom_9d11ee3633f584c6342b586860ca562b.json
+./packages/vendors/customize/op_impl/ai_core/tbe/kernel/ascend910b/tanh_custom/TanhCustom_9d11ee3633f584c6342b586860ca562b.o
+./packages/vendors/customize/op_impl/ai_core/tbe/kernel/config/ascend910b/binary_info_config.json
+./packages/vendors/customize/op_impl/ai_core/tbe/kernel/config/ascend910b/tanh_custom.json
+./packages/vendors/customize/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64/libcust_opmaster_rt2.0.so
+./packages/vendors/customize/op_impl/ai_core/tbe/op_tiling/liboptiling.so
+./packages/vendors/customize/op_proto/inc/op_proto.h
+./packages/vendors/customize/op_proto/lib/linux/aarch64/libcust_opsproto_rt2.0.so
+./packages/vendors/customize/version.info
+./uninstall.sh
+./upgrade.sh
+CRC: 2151328672
+SHA256: 28075e63dde593848da6f21bd975c99651ebb2c53b702a839efa4d13ff8f15cb
+Skipping md5sum at user request
+
+Self-extractable archive "custom_opp_ubuntu_aarch64.run" successfully created.
+Copy /mnt/workspace/gitCode/cann/npu-simulator/AsendC_tanh/TanhCustom/build_out//_CPack_Packages/Linux/External/custom_opp_ubuntu_aarch64.run/custom_opp_ubuntu_aarch64.run to /mnt/workspace/gitCode/cann/npu-simulator/AsendC_tanh/TanhCustom/build_out/
+Copy /mnt/workspace/gitCode/cann/npu-simulator/AsendC_tanh/TanhCustom/build_out//_CPack_Packages/Linux/External/custom_opp_ubuntu_aarch64.run/custom_opp_ubuntu_aarch64.run to /mnt/workspace/gitCode/cann/npu-simulator/AsendC_tanh/TanhCustom/build_out//
+CPack: - package: /mnt/workspace/gitCode/cann/npu-simulator/AsendC_tanh/TanhCustom/build_out/custom_opp_ubuntu_aarch64.run.json generated.
+CPack: - package: /mnt/workspace/gitCode/cann/npu-simulator/AsendC_tanh/TanhCustom/build_out/custom_opp_ubuntu_aarch64.run generated.

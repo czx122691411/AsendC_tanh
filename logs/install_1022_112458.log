@@ -1,0 +1,23 @@
+Verifying archive integrity...     0%    75%  100%   SHA256 checksums are OK. All good.
+Uncompressing version:1.0     0%    75%  100%  
+[ops_custom] [2026-10-22 11:24:58] [WARNING] The directory /home/developer/Ascend/cann-9.0.0/opp does not have sufficient permissions. Please check and modify the folder permissions (e.g., using chmod), or use the --install-path option to specify an installation path and change the environment variable ASCEND_CUSTOM_OPP_PATH to the specified path.
+[ops_custom] [2026-10-22 11:24:58] [INFO] create /home/developer/Ascend/cann-9.0.0/opp/vendors/customize.
+[ops_custom] [2026-10-22 11:24:58] [INFO] upgrade framework
+[ops_custom] [2026-10-22 11:24:58] [INFO] create /home/developer/Ascend/cann-9.0.0/opp/vendors/customize/framework.
+[ops_custom] [2026-10-22 11:24:58] [INFO] copy new ops framework files ......
+[ops_custom] [2026-10-22 11:24:58] [INFO] upgrade op proto
+[ops_custom] [2026-10-22 11:24:58] [INFO] create /home/developer/Ascend/cann-9.0.0/opp/vendors/customize/op_proto.
+[ops_custom] [2026-10-22 11:24:58] [INFO] copy new ops op_proto files ......
+[ops_custom] [2026-10-22 11:24:58] [INFO] upgrade op impl
+[ops_custom] [2026-10-22 11:24:58] [INFO] create /home/developer/Ascend/cann-9.0.0/opp/vendors/customize/op_impl.
+[ops_custom] [2026-10-22 11:24:58] [INFO] copy new ops op_impl files ......
+[ops_custom] [2026-10-22 11:24:58] [INFO] upgrade op api
+[ops_custom] [2026-10-22 11:24:58] [INFO] create /home/developer/Ascend/cann-9.0.0/opp/vendors/customize/op_api.
+[ops_custom] [2026-10-22 11:24:58] [INFO] copy new ops op_api files ......
+[ops_custom] [2026-10-22 11:24:58] [INFO] upgrade uninstall
+[ops_custom] [2026-10-22 11:24:58] [INFO] copy new uninstall.sh files ......
+[ops_custom] [2026-10-22 11:24:58] [INFO] upgrade version.info
+[ops_custom] [2026-10-22 11:24:58] [INFO] copy new version.info files ......
+[ops_custom] [2026-10-22 11:24:58] [INFO] no need to upgrade custom.proto files
+[ops_custom] [2026-10-22 11:24:58] [INFO] using requirements: when custom module install finished or before you run the custom module, execute the command [ export LD_LIBRARY_PATH=/home/developer/Ascend/cann-9.0.0/opp/vendors/customize/op_api/lib/:${LD_LIBRARY_PATH} ] to set the environment path
+SUCCESS
